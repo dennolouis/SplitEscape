@@ -1,0 +1,166 @@
+{
+    "name": "CubeInputs",
+    "maps": [
+        {
+            "name": "cube inputs",
+            "id": "94595347-632d-4af8-be77-f16558bd29f3",
+            "actions": [
+                {
+                    "name": "left",
+                    "type": "Button",
+                    "id": "efc48779-604d-424f-82bf-e778b0791400",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "right",
+                    "type": "Button",
+                    "id": "8f7b5854-1591-45ff-a53f-21bcbf5e7eca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "continue",
+                    "type": "Button",
+                    "id": "a997a00d-a8f4-4c73-a75c-37ed61651f1a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "play",
+                    "type": "Button",
+                    "id": "78250fa9-7578-46e6-9c5c-e6f57bcb1033",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "playAgain",
+                    "type": "Button",
+                    "id": "fa3e5181-b9a9-4b15-85af-852d27e525bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "pause",
+                    "type": "Button",
+                    "id": "f490c21d-19ac-4b69-b755-7a1244ad2ff6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "resume",
+                    "type": "Button",
+                    "id": "5d4a832b-fa97-4f8b-b683-67de5a3dd0c6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "mute",
+                    "type": "Button",
+                    "id": "5665f03e-fd35-4489-8be7-88dd35ba27d7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c67d6f67-d048-4c46-a490-ef0bc40625ab",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3826567-34bd-40ed-b109-e50df5b825b9",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbf3676b-fe02-42cf-b772-add1d4625c07",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15a04f8d-9a39-4a84-8c83-e7d2b253d242",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "play",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42d20af0-f6a1-4504-94ec-dba4382737a0",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "playAgain",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2305b346-7d1b-4cb8-9cf5-d7bb75a6aca7",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b170dea7-e9ef-417e-95d7-cd1adb1442c6",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "resume",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c46952a4-e80b-43f7-bbcc-de52a1675899",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
