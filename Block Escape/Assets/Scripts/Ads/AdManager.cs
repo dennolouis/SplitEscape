@@ -6,6 +6,8 @@ using UnityEngine.Advertisements;
 public class AdManager : MonoBehaviour
 {
 
+string gameID = "";
+
 #if UNITY_IOS
     string gameId = "4664670";
 #elif UNITY_ANDROID
