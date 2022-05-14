@@ -106,7 +106,7 @@ public class GameFunctions : MonoBehaviour
     void MaybeShowAd()
     {
         //show ad here 30% of the time
-        if (Random.Range(0, 100) <= 30 && adsLoaded)
+        if (Random.Range(0, 100) <= 11 && adsLoaded)
         {
             gameOver = true;
             AudioListener.pause = true;

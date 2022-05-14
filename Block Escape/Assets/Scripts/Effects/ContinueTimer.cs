@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class ContinueTimer : MonoBehaviour
 {
     public TextMeshProUGUI timer;
-    int time = 5;
+    public int time = 5;
 
     GameFunctions gameFunctions;
     bool continued = false;
@@ -46,5 +46,10 @@ public class ContinueTimer : MonoBehaviour
     {
         continued = true;
         time = 5;
+    }
+
+    public void Skip()
+    {
+        time = 0;
     }
 }
