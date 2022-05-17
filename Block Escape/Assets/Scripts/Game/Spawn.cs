@@ -108,4 +108,9 @@ public class Spawn : MonoBehaviour
 
         best = data.highscore;
     }
+
+    public void AddToScore(int add)
+    {
+        score += add;
+    }
 }

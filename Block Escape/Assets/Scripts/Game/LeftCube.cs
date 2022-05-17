@@ -77,9 +77,6 @@ public class LeftCube : MonoBehaviour
             default:
                 if (!FindObjectOfType<RightCube>().immune)
                 {
-                    //FindObjectOfType<Spawn>().Save();
-                    // GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>().Play();
-                    //Time.timeScale = 0;
                     gameFunctions.PlayerGotHit();
                 }
                 break;
@@ -95,7 +92,19 @@ public class LeftCube : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameFunctions.LoadGameScreen();
+        if (other.gameObject.tag == "Finish")
+            gameFunctions.LoadGameScreen();
+
+        if (other.gameObject.tag == "ColorObsticle")
+        {
+            if (other.gameObject.GetComponent<MeshRenderer>().sharedMaterial != gameObject.GetComponent<MeshRenderer>().sharedMaterial)
+            {
+                if (!FindObjectOfType<RightCube>().immune)
+                {
+                    gameFunctions.PlayerGotHit();
+                }
+            }
+        }
     }
 
     public void PressLetft()

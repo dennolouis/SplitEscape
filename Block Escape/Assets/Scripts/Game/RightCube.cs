@@ -95,7 +95,19 @@ public class RightCube : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameFunctions.LoadGameScreen();
+        if(other.gameObject.tag == "Finish")
+            gameFunctions.LoadGameScreen();
+
+        if (other.gameObject.tag == "ColorObsticle")
+        {
+            if (other.gameObject.GetComponent<MeshRenderer>().sharedMaterial != gameObject.GetComponent<MeshRenderer>().sharedMaterial)
+            {
+                if (!immune)
+                {
+                    gameFunctions.PlayerGotHit();
+                }
+            }
+        }
     }
 
     void MakeVulnerable ()

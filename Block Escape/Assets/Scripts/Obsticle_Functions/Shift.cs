@@ -19,7 +19,8 @@ public class Shift : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(direction, 0, 0) * speed * Time.deltaTime);
-        audioSource.volume -= 0.06f * Time.deltaTime;
+        if(audioSource)
+            audioSource.volume -= 0.06f * Time.deltaTime;
     }
 
 

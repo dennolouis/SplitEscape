@@ -12,6 +12,7 @@ TagManager:
   - Pause
   - Tutorial
   - TutorialSound
+  - ColorObsticle
   layers:
   - Default
   - TransparentFX
