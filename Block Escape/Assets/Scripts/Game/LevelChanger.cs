@@ -8,12 +8,6 @@ public class LevelChanger : MonoBehaviour
 
     int levelToLoad;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
@@ -23,5 +17,10 @@ public class LevelChanger : MonoBehaviour
     public void OnFadeComplete()
     {
         SceneManager.LoadScene(levelToLoad);
+    }
+
+    public void LoadLevelSelect()
+    {
+        SceneManager.LoadScene(2);
     }
 }

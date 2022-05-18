@@ -50,7 +50,7 @@ namespace Unity.Advertisement.IosSupport.Samples
                 yield return null;
             }
 #endif 
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(1);
             yield return null;
         }
     }   

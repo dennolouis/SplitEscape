@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectionHandler : MonoBehaviour
 {
-
+    public Button playButton;
     public TextMeshProUGUI level;
+    public TextMeshProUGUI scoreTMP;
     public TextMeshProUGUI lockText;
+    public AudioSource valid;
+    public AudioSource invalid;
     public GameObject lockIMG;
+    public GameObject description;
     int selectedLevel;
     int combinedScore;
 
@@ -22,6 +27,7 @@ public class SelectionHandler : MonoBehaviour
 
     private void Start()
     {
+        description.SetActive(false);
         lockIMG.SetActive(false);
         combinedScore = 0;
         selectedLevel = 1;
@@ -34,6 +40,11 @@ public class SelectionHandler : MonoBehaviour
         {
             selectedLevel += 1;
             SetLevel();
+            valid.Play();
+        }
+        else
+        {
+            invalid.Play();
         }
     }
 
@@ -43,6 +54,11 @@ public class SelectionHandler : MonoBehaviour
         {
             selectedLevel -= 1;
             SetLevel();
+            valid.Play();
+        }
+        else
+        {
+            invalid.Play();
         }
     }
 
@@ -52,12 +68,30 @@ public class SelectionHandler : MonoBehaviour
         if(levels[selectedLevel].amount > combinedScore)
         {
             lockIMG.SetActive(true);
-            lockText.text = "Combined Score < " + levels[selectedLevel].amount.ToString();
+            lockText.text = "Total Score < " + levels[selectedLevel].amount.ToString();
+            scoreTMP.gameObject.SetActive(false);
+            playButton.interactable = false;
         }
         else
         {
             lockIMG.SetActive(false);
+            scoreTMP.gameObject.SetActive(true);
+            playButton.interactable = true;
         }
+    }
+
+    public void Play()
+    {
+        FindObjectOfType<LevelChanger>().FadeToLevel(selectedLevel + 3);
+    }
+
+    public void ShowDescription()
+    {
+        description.SetActive(true);
+    }
+    public void HideDescription()
+    {
+        description.SetActive(false);
     }
     struct Level
     {

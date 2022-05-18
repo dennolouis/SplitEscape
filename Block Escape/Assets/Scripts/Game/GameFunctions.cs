@@ -168,7 +168,7 @@ public class GameFunctions : MonoBehaviour
     
     public void LoadGameScreen()
     {
-        FindObjectOfType<LevelChanger>().FadeToLevel(1);
+        FindObjectOfType<LevelChanger>().FadeToLevel(4);
     }
 
     public void LoadTutorial()
