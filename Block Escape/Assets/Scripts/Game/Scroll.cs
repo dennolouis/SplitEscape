@@ -10,10 +10,12 @@ public class Scroll : MonoBehaviour
 
     float initSpeed, initRate;
 
+    GameFunctions gameFunctions;
     void Start()
     {
         initSpeed = speed;
         initRate = rate;
+        gameFunctions = FindObjectOfType<GameFunctions>();
     }
 
     public void resetValues()
@@ -28,9 +30,11 @@ public class Scroll : MonoBehaviour
     void Update()
     {
         //only do this is game is not over
-        if (!FindObjectOfType<GameFunctions>().GetGameState())
-            transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
-
+        if (gameFunctions)
+        {
+            if (!gameFunctions.GetGameState())
+                transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
+        }
         if(transform.position.y > 9999999999999999999)
         {
             transform.position = new Vector3(0, 0, 0);
