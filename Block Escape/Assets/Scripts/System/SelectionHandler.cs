@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SelectionHandler : MonoBehaviour
 {
     public Button playButton;
+    public TextMeshProUGUI totalScoreTMP;
     public TextMeshProUGUI level;
     public TextMeshProUGUI scoreTMP;
     public TextMeshProUGUI lockText;
@@ -16,6 +17,8 @@ public class SelectionHandler : MonoBehaviour
     public GameObject description;
     int selectedLevel;
     int combinedScore;
+
+    PlayerData playerData;
 
     Level[] levels =
     {
@@ -27,11 +30,22 @@ public class SelectionHandler : MonoBehaviour
 
     private void Start()
     {
+        playerData = SaveSystem.Load();
+
         description.SetActive(false);
         lockIMG.SetActive(false);
         combinedScore = 0;
-        selectedLevel = 1;
+
+        foreach(int score in playerData.levelScores){
+            combinedScore += score;
+        }
+
+        selectedLevel = combinedScore > 0? 1: 0;
         SetLevel();
+
+        
+
+        totalScoreTMP.text = "Total Score: " + combinedScore.ToString();
     }
 
     public void Next()
@@ -65,6 +79,7 @@ public class SelectionHandler : MonoBehaviour
     void SetLevel()
     {
         level.text = levels[selectedLevel].name;
+        scoreTMP.text = "Best: " + playerData.levelScores[selectedLevel].ToString();
         if(levels[selectedLevel].amount > combinedScore)
         {
             lockIMG.SetActive(true);

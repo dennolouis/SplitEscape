@@ -32,6 +32,8 @@ public class GameFunctions : MonoBehaviour
     public Spawn spawn;
     public Scroll scroll;
     public ContinueTimer continueTimer;
+
+    public Player player;
     
     void Awake()
     {
@@ -75,7 +77,9 @@ public class GameFunctions : MonoBehaviour
         
         //for when left and right cube got hit at the same time
         if (justGothit)
-            return;     
+            return;
+
+        
 
         FindObjectOfType<Spawn>().Save();
         GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>().Play();
@@ -106,7 +110,7 @@ public class GameFunctions : MonoBehaviour
     void MaybeShowAd()
     {
         //show ad here 30% of the time
-        if (Random.Range(0, 100) <= 17 && adsLoaded)
+        if (player.adCount > 5 && adsLoaded)
         {
             gameOver = true;
             AudioListener.pause = true;

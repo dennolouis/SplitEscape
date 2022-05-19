@@ -6,14 +6,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
 
-    public static void Save(int score)
+    public static void Save(Player player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
 
 
-        PlayerData data = new PlayerData(score);
+        PlayerData data = new PlayerData(player);
 
 
         formatter.Serialize(stream, data);
@@ -38,7 +38,7 @@ public static class SaveSystem
         else
         {
             Debug.LogError("save file not found");
-            PlayerData data = new PlayerData(0);
+            PlayerData data = new PlayerData();
             return data;
         }
     }

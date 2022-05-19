@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Spawn : MonoBehaviour
 {
@@ -22,9 +23,15 @@ public class Spawn : MonoBehaviour
 
     public bool justShowLast = false;
 
+    int levelIndex;
+
+    [SerializeField]
+    Player player;
+    PlayerData data;
 
     private void Awake()
     {
+        levelIndex = SceneManager.GetActiveScene().buildIndex - 3;
         Load();
         bestUI.text = "Best: " + best.ToString();
     }
@@ -35,7 +42,10 @@ public class Spawn : MonoBehaviour
 
         initSpeed = speed;
         initRate = rate;
-        
+
+        player = FindObjectOfType<Player>();
+        player.adCount += 1;
+        if (player.adCount > 6) player.adCount = 0;
         Invoke("Init", speed/2);
 
     }
@@ -71,6 +81,7 @@ public class Spawn : MonoBehaviour
         if (score > best)
         {
             best = score;
+            player.levelScores[levelIndex] = score;
             bestUI.text = "Best: " + best.ToString();
         }
     
@@ -98,15 +109,22 @@ public class Spawn : MonoBehaviour
 
 
     public void Save()
-    {
-        SaveSystem.Save(this.best);
+    {    
+        SaveSystem.Save(player);
     }
 
     public void Load()
     {
-        PlayerData data = SaveSystem.Load();
+        data = SaveSystem.Load();
 
-        best = data.highscore;
+        best = data.levelScores[levelIndex];
+
+        for(int i = 0; i < player.levelScores.Length; i++)
+        {
+            player.levelScores[i] = data.levelScores[i];
+        }
+
+        player.adCount = data.adCount;
     }
 
     public void AddToScore(int add)
