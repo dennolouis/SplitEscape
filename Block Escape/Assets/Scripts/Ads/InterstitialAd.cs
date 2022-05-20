@@ -8,6 +8,8 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
     [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
     string _adUnitId;
 
+    HanldeMute volume;
+
     void Awake()
     {
 
@@ -25,6 +27,7 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
     void Start()
     {
         LoadAd();
+        volume = FindObjectOfType<HanldeMute>();
     }
 
     // Load content to the Ad Unit:
@@ -55,7 +58,7 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         Debug.Log($"Error loading Ad Unit: {adUnitId} - {error.ToString()} - {message}");
         // Optionally execute code if the Ad Unit fails to load, such as attempting to try again.
         Time.timeScale = 1;
-        AudioListener.pause = false;
+        AudioListener.pause = volume.muteSate;
         FindObjectOfType<LevelChanger>().FadeToLevel(1);
     }
 
@@ -64,14 +67,13 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         Debug.Log($"Error showing Ad Unit {adUnitId}: {error.ToString()} - {message}");
         // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
         Time.timeScale = 1;
-        AudioListener.pause = false;
+        AudioListener.pause = volume.muteSate;
         FindObjectOfType<LevelChanger>().FadeToLevel(1);
     }
 
     public void OnUnityAdsShowStart(string adUnitId) { }
     public void OnUnityAdsShowClick(string adUnitId) { }
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState) {
-
-        AudioListener.pause = false;
+        AudioListener.pause = volume.muteSate;
     }
 }

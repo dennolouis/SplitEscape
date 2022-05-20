@@ -27,6 +27,7 @@ public class GameFunctions : MonoBehaviour
     BannerAd banner;
 
     bool adsLoaded = false;
+    HanldeMute volume;
 
 
     public Spawn spawn;
@@ -53,6 +54,8 @@ public class GameFunctions : MonoBehaviour
         banner = FindObjectOfType<BannerAd>();
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
         banner.ShowBannerAd();
+
+        volume = FindObjectOfType<HanldeMute>();
     }
 
     public void RestScene()
@@ -145,7 +148,8 @@ public class GameFunctions : MonoBehaviour
     public void OnRewardedComplete()
     {
         Time.timeScale = 1;
-        AudioListener.pause = false;
+        
+        AudioListener.pause = volume.muteSate;
         FindObjectOfType<RightCube>().Resume();
         banner.ShowBannerAd();
 
