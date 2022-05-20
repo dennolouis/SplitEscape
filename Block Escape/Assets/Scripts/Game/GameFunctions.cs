@@ -213,14 +213,14 @@ public class GameFunctions : MonoBehaviour
     {
         if (isMuted)
         {
-            AudioListener.volume = 1;
+            AudioListener.volume = volume.muteSate? 0: 1;
         }
         else
         {
             AudioListener.volume = 0;
         }
 
-        isMuted = !isMuted;
+        isMuted = AudioListener.volume == 0;
     }
 
 
