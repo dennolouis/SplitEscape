@@ -9,7 +9,7 @@ public static class SaveSystem
     public static void Save(Player player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.fun";
+        string path = Application.persistentDataPath + "/player.fun1";
         FileStream stream = new FileStream(path, FileMode.Create);
 
 
@@ -22,7 +22,7 @@ public static class SaveSystem
 
     public static PlayerData Load()
     {
-        string path = Application.persistentDataPath + "/player.fun";
+        string path = Application.persistentDataPath + "/player.fun1";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
