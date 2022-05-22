@@ -23,8 +23,9 @@ public class SelectionHandler : MonoBehaviour
     Level[] levels =
     {
         new Level("Tutorial", 0),
-        new Level("World 0", 0),
-        new Level("World 1", 100),
+        new Level("World 1/3", 0),
+        new Level("World 2/3", 100),
+        new Level("World 3/3", 300),
     };
 
 

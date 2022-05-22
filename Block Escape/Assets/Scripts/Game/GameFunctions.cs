@@ -104,7 +104,7 @@ public class GameFunctions : MonoBehaviour
 
     public void ShowGameOverScreen()
     {
-        Invoker.InvokeDelayed(MaybeShowAd, 0.5f);
+        Invoker.InvokeDelayed(MaybeShowAd, 0.3f);
         continueButton.SetActive(false);
         gameOverScreen.SetActive(true);
         pauseButton.SetActive(false);
@@ -112,7 +112,7 @@ public class GameFunctions : MonoBehaviour
 
     void MaybeShowAd()
     {
-        //show ad here 30% of the time
+        
         if (player.adCount > 5 && adsLoaded)
         {
             gameOver = true;
@@ -163,13 +163,13 @@ public class GameFunctions : MonoBehaviour
         if (value.started)
         {
             ReloadScene();
-            //RestScene();
         }
     }
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+        FindObjectOfType<LevelChanger>().FadeToLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
 

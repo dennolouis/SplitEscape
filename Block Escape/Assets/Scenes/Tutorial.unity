@@ -570,12 +570,12 @@ GameObject:
   - component: {fileID: 106457295}
   - component: {fileID: 106457294}
   m_Layer: 5
-  m_Name: Mute
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &106457293
 RectTransform:
   m_ObjectHideFlags: 0
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106457292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
@@ -654,14 +654,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1029528765}
-        m_TargetAssemblyTypeName: GameFunctions, Assembly-CSharp
-        m_MethodName: HandleMute
-        m_Mode: 1
+      - m_Target: {fileID: 2125446846}
+        m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
+        m_MethodName: FadeToLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1236,18 +1236,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mute
+  m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c41906953f81545b1a6b612d229e916c, type: 2}
+  m_sharedMaterial: {fileID: 2000062151594140778, guid: c41906953f81545b1a6b612d229e916c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 1
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 0.13679248, b: 0.9432646, a: 1}
@@ -1603,8 +1603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameIsPaused: 0
   resumeButtonUI: {fileID: 728632558}
-  mutebutton: {fileID: 106457292}
-  quitbutton: {fileID: 0}
+  quitbutton: {fileID: 106457292}
 --- !u!114 &727434382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &728632559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4548,8 +4547,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c41906953f81545b1a6b612d229e916c, type: 2}
+  m_sharedMaterial: {fileID: 2000062151594140778, guid: c41906953f81545b1a6b612d229e916c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6719,6 +6718,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   rate: 0.4
+--- !u!114 &2125446846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5086956814535595349, guid: ab1de68be2f9f2c40a4aa5a59e8392bd, type: 3}
+  m_PrefabInstance: {fileID: 1950171651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed50960fb7184304f921fa11b64a1fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4889070265567054588
 PrefabInstance:
   m_ObjectHideFlags: 0

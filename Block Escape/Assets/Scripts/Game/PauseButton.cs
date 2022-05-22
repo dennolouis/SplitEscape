@@ -9,7 +9,6 @@ public class PauseButton : MonoBehaviour
 
     //public GameObject pauseButtonUI;
     public GameObject resumeButtonUI;
-    public GameObject mutebutton;
     public GameObject quitbutton;
 
 
@@ -18,7 +17,6 @@ public class PauseButton : MonoBehaviour
     {
         gameObject.SetActive(true);
         resumeButtonUI.SetActive(false);
-        mutebutton.SetActive(false);
         quitbutton.SetActive(false);
     }
     public void Resume()
@@ -26,7 +24,6 @@ public class PauseButton : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         resumeButtonUI.SetActive(false);
-        mutebutton.SetActive(false);
         quitbutton.SetActive(false);
         gameObject.SetActive(true);
     }
@@ -36,7 +33,6 @@ public class PauseButton : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         resumeButtonUI.SetActive(true);
-        mutebutton.SetActive(true);
         quitbutton.SetActive(true);
         HidePause();
     }

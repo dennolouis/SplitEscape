@@ -44,6 +44,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
         Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
         FindObjectOfType<GameFunctions>().canContinue = false;
         initialized = false;
-        FindObjectOfType<GameFunctions>().ShowAdError($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
+        //FindObjectOfType<GameFunctions>().ShowAdError($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
+        FindObjectOfType<GameFunctions>().ShowAdError("Connect Network");
     }
 }
