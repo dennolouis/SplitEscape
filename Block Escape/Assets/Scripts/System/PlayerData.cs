@@ -8,6 +8,7 @@ public class PlayerData
 
     public int[] levelScores = new int[5];
     public int adCount;
+    //public int selectedLevel;
     
     public PlayerData(Player player)
     {
@@ -17,6 +18,7 @@ public class PlayerData
         }
 
         adCount = player.adCount;
+        //selectedLevel = player.selectedLevel;
     }
 
     public PlayerData()
@@ -27,6 +29,7 @@ public class PlayerData
         }
 
         adCount = 0;
+        //selectedLevel = 0;
     }
 
     public void EnsureValidData()

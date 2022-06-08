@@ -54,13 +54,15 @@ public class SelectionHandler : MonoBehaviour
         if(selectedLevel < levels.Length - 1)
         {
             selectedLevel += 1;
-            SetLevel();
             valid.Play();
         }
         else
         {
             invalid.Play();
+            selectedLevel = 0;
         }
+
+        SetLevel();
     }
 
     public void Previous()
@@ -68,13 +70,15 @@ public class SelectionHandler : MonoBehaviour
         if (selectedLevel > 0)
         {
             selectedLevel -= 1;
-            SetLevel();
             valid.Play();
         }
         else
         {
             invalid.Play();
+            selectedLevel = levels.Length - 1;
         }
+
+        SetLevel();
     }
 
     void SetLevel()
