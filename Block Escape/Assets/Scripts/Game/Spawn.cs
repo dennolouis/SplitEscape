@@ -44,6 +44,7 @@ public class Spawn : MonoBehaviour
         initRate = rate;
 
         player = FindObjectOfType<Player>();
+        player.selectedLevel = levelIndex;
         player.adCount += 1;
         if (player.adCount > 6) player.adCount = 0;
         Invoke("Init", speed/2);
@@ -109,7 +110,7 @@ public class Spawn : MonoBehaviour
 
 
     public void Save()
-    {    
+    {
         SaveSystem.Save(player);
     }
 

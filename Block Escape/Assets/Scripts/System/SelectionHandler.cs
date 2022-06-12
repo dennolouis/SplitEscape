@@ -19,6 +19,7 @@ public class SelectionHandler : MonoBehaviour
     int combinedScore;
 
     PlayerData playerData;
+    Player player;
 
     Level[] levels =
     {
@@ -32,7 +33,8 @@ public class SelectionHandler : MonoBehaviour
 
     private void Start()
     {
-        playerData = SaveSystem.Load();
+
+        Load();
 
         description.SetActive(false);
         lockIMG.SetActive(false);
@@ -42,7 +44,7 @@ public class SelectionHandler : MonoBehaviour
             combinedScore += score;
         }
 
-        selectedLevel = combinedScore > 0? 1: 0;
+        //selectedLevel = player.selectedLevel;//combinedScore > 0? 1: 0;
         SetLevel();
 
         
@@ -52,15 +54,15 @@ public class SelectionHandler : MonoBehaviour
 
     public void Next()
     {
-        if(selectedLevel < levels.Length - 1)
+        if(player.selectedLevel < levels.Length - 1)
         {
-            selectedLevel += 1;
+            player.selectedLevel += 1;
             valid.Play();
         }
         else
         {
             invalid.Play();
-            selectedLevel = 0;
+            player.selectedLevel = 0;
         }
 
         SetLevel();
@@ -68,15 +70,15 @@ public class SelectionHandler : MonoBehaviour
 
     public void Previous()
     {
-        if (selectedLevel > 0)
+        if (player.selectedLevel > 0)
         {
-            selectedLevel -= 1;
+            player.selectedLevel -= 1;
             valid.Play();
         }
         else
         {
             invalid.Play();
-            selectedLevel = levels.Length - 1;
+            player.selectedLevel = levels.Length - 1;
         }
 
         SetLevel();
@@ -84,12 +86,12 @@ public class SelectionHandler : MonoBehaviour
 
     void SetLevel()
     {
-        level.text = levels[selectedLevel].name;
-        scoreTMP.text = "Best: " + playerData.levelScores[selectedLevel].ToString();
-        if(levels[selectedLevel].amount > combinedScore)
+        level.text = levels[player.selectedLevel].name;
+        scoreTMP.text = "Best: " + playerData.levelScores[player.selectedLevel].ToString();
+        if(levels[player.selectedLevel].amount > combinedScore)
         {
             lockIMG.SetActive(true);
-            lockText.text = "Total Score < " + levels[selectedLevel].amount.ToString();
+            lockText.text = "Total Score < " + levels[player.selectedLevel].amount.ToString();
             scoreTMP.gameObject.SetActive(false);
             playButton.interactable = false;
         }
@@ -103,7 +105,8 @@ public class SelectionHandler : MonoBehaviour
 
     public void Play()
     {
-        FindObjectOfType<LevelChanger>().FadeToLevel(selectedLevel + 3);
+        Save();
+        FindObjectOfType<LevelChanger>().FadeToLevel(player.selectedLevel + 3);
     }
 
     public void ShowDescription()
@@ -127,6 +130,28 @@ public class SelectionHandler : MonoBehaviour
             this.name = name;
             this.amount = amount;
         }
+    }
+
+    void Save()
+    {
+        SaveSystem.Save(player);
+    }
+
+    void Load()
+    {   
+        player = FindObjectOfType<Player>();
+        playerData = SaveSystem.Load();
+
+        for (int i = 0; i < player.levelScores.Length; i++)
+        {
+            player.levelScores[i] = playerData.levelScores[i];
+            player.scoresList.Add(playerData.levelScores[i]); //comment this out in future update
+        }
+
+        //player.scoresList = data.scoresList;   uncomment this in future update
+        player.adCount = playerData.adCount;
+        player.selectedLevel = playerData.selectedLevel;
+
     }
 
 }
