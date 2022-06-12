@@ -7,18 +7,18 @@ public class PlayerData
 {
 
     public int[] levelScores = new int[5];
+    public List<int> scoresList = new List<int>();
     public int adCount;
-    //public int selectedLevel;
     
     public PlayerData(Player player)
     {
-        for(int i = 0; i < levelScores.Length; i++)
+        for (int i = 0; i < levelScores.Length; i++)
         {
             levelScores[i] = player.levelScores[i];
+            scoresList.Add(player.levelScores[i]);
         }
 
         adCount = player.adCount;
-        //selectedLevel = player.selectedLevel;
     }
 
     public PlayerData()
@@ -29,7 +29,6 @@ public class PlayerData
         }
 
         adCount = 0;
-        //selectedLevel = 0;
     }
 
     public void EnsureValidData()

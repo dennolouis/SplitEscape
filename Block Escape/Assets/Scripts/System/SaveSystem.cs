@@ -32,7 +32,7 @@ public static class SaveSystem
 
             stream.Close();
 
-            data.EnsureValidData();
+            //data.EnsureValidData();
 
             return data;
 

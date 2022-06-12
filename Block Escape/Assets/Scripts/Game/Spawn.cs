@@ -119,11 +119,15 @@ public class Spawn : MonoBehaviour
 
         best = data.levelScores[levelIndex];
 
+
+
         for(int i = 0; i < player.levelScores.Length; i++)
         {
             player.levelScores[i] = data.levelScores[i];
+            player.scoresList.Add(data.levelScores[i]); //comment this out in future update
         }
 
+        //player.scoresList = data.scoresList;   uncomment this in future update
         player.adCount = data.adCount;
     }
 
