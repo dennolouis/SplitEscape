@@ -15,6 +15,10 @@ public class SelectionHandler : MonoBehaviour
     public AudioSource invalid;
     public GameObject lockIMG;
     public GameObject description;
+    public GameObject modes;
+    public Button easy;
+    public Button medium;
+    public Button hard;
     int selectedLevel;
     int combinedScore;
 
@@ -25,9 +29,9 @@ public class SelectionHandler : MonoBehaviour
     {
         new Level("Tutorial", 0),
         new Level("World 1/4", 0),
-        new Level("World 2/4", 100),
-        new Level("World 3/4", 300),
-        new Level("world 4/4", 400)
+        new Level("World 2/4", 0),
+        new Level("World 3/4", 0),
+        new Level("world 4/4", 0)
     };
 
 
@@ -35,7 +39,7 @@ public class SelectionHandler : MonoBehaviour
     {
 
         Load();
-
+        modes.SetActive(false);
         description.SetActive(false);
         lockIMG.SetActive(false);
         combinedScore = 0;
@@ -101,12 +105,25 @@ public class SelectionHandler : MonoBehaviour
             scoreTMP.gameObject.SetActive(true);
             playButton.interactable = true;
         }
+        HideModes();
     }
 
     public void Play()
     {
         Save();
         FindObjectOfType<LevelChanger>().FadeToLevel(player.selectedLevel + 3);
+    }
+
+    public void ShowModes()
+    {
+        medium.interactable = playerData.levelScores[player.selectedLevel] >= 40;
+        hard.interactable = playerData.levelScores[player.selectedLevel] >= 80;
+
+        modes.SetActive(true);
+    }
+    public void HideModes()
+    {
+        modes.SetActive(false);
     }
 
     public void ShowDescription()
