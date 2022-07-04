@@ -116,6 +116,12 @@ public class SelectionHandler : MonoBehaviour
 
     public void ShowModes()
     {
+        if(player.selectedLevel == 0)
+        {
+            Play();
+            return;
+        }
+
         medium.interactable = playerData.levelScores[player.selectedLevel] >= 40;
         hard.interactable = playerData.levelScores[player.selectedLevel] >= 80;
 
@@ -124,6 +130,12 @@ public class SelectionHandler : MonoBehaviour
     public void HideModes()
     {
         modes.SetActive(false);
+    }
+
+    public void SetMode(int mode)
+    {
+        player.mode = mode;
+        Play();
     }
 
     public void ShowDescription()
@@ -168,6 +180,7 @@ public class SelectionHandler : MonoBehaviour
         //player.scoresList = data.scoresList;   uncomment this in future update
         player.adCount = playerData.adCount;
         player.selectedLevel = playerData.selectedLevel;
+        player.mode = playerData.mode;
 
     }
 

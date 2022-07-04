@@ -897,7 +897,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelScores: 0000000000000000000000000000000000000000
+  scoresList: 
   adCount: 0
+  selectedLevel: 0
+  mode: 0
 --- !u!4 &395735686
 Transform:
   m_ObjectHideFlags: 0
@@ -5027,14 +5030,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj:
+  - {fileID: 2512076869930282831, guid: e18091ef11dc38043bf9cc8d1c494951, type: 3}
+  - {fileID: 5588590378411541031, guid: c99b4c31b2761a1428016c841822a89e, type: 3}
+  - {fileID: 9022313484857586922, guid: 4315389eed1665741803a6f3941bf1fb, type: 3}
+  - {fileID: 3712312030207798860, guid: e96b18c24cba15d448506620eb34aaae, type: 3}
+  - {fileID: 6600379315991883952, guid: e267c84e337dc3340805b00a42f245a8, type: 3}
+  - {fileID: 6708797544150581436, guid: 9f40e91f7c058584d93cca619ef68171, type: 3}
   - {fileID: 100004, guid: 10a7ec2a2783770419a38059c45ea8b3, type: 3}
   - {fileID: 7471055548040897547, guid: b3afcd9692ed8b246bed8c04a0aab572, type: 3}
-  - {fileID: 9022313484857586922, guid: 4315389eed1665741803a6f3941bf1fb, type: 3}
-  - {fileID: 6600379315991883952, guid: e267c84e337dc3340805b00a42f245a8, type: 3}
-  - {fileID: 5588590378411541031, guid: c99b4c31b2761a1428016c841822a89e, type: 3}
-  - {fileID: 6708797544150581436, guid: 9f40e91f7c058584d93cca619ef68171, type: 3}
-  - {fileID: 2512076869930282831, guid: e18091ef11dc38043bf9cc8d1c494951, type: 3}
-  - {fileID: 3712312030207798860, guid: e96b18c24cba15d448506620eb34aaae, type: 3}
   - {fileID: 8018490772208838154, guid: b8927dfc0f708244db4d51f9363d4cd4, type: 3}
   speed: 1.5
   rate: 1.8
@@ -5042,6 +5045,7 @@ MonoBehaviour:
   bestUI: {fileID: 2138772973}
   best: 0
   justShowLast: 0
+  numObstacles: 0
   player: {fileID: 395735685}
 --- !u!1 &1420942048
 GameObject:

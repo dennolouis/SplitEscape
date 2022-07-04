@@ -875,7 +875,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelScores: 0000000000000000000000000000000000000000
+  scoresList: 
   adCount: 0
+  selectedLevel: 0
+  mode: 0
 --- !u!4 &395735686
 Transform:
   m_ObjectHideFlags: 0
@@ -3678,10 +3681,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj:
-  - {fileID: 6679957225620098195, guid: 4575a00a4a7404894a051eac6685455a, type: 3}
   - {fileID: 2645284299106678265, guid: 3d663e11d799d46d686ffd7b0ab128e7, type: 3}
   - {fileID: 8783563702456107155, guid: 8f5fc12f98ec64706a57d4c4a8308dd6, type: 3}
   - {fileID: 3471517562415469389, guid: 4cc1eec4822e440e89dccf630e763822, type: 3}
+  - {fileID: 6679957225620098195, guid: 4575a00a4a7404894a051eac6685455a, type: 3}
   - {fileID: 8018490772208838154, guid: b8927dfc0f708244db4d51f9363d4cd4, type: 3}
   - {fileID: 100004, guid: 10a7ec2a2783770419a38059c45ea8b3, type: 3}
   - {fileID: 6598001463497506894, guid: 81579c610c897479f92611ebe0e6c9e0, type: 3}
@@ -3691,6 +3694,7 @@ MonoBehaviour:
   bestUI: {fileID: 2138772973}
   best: 0
   justShowLast: 0
+  numObstacles: 0
   player: {fileID: 395735685}
 --- !u!1 &1420942048
 GameObject:

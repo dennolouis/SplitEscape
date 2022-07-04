@@ -25,6 +25,8 @@ public class Spawn : MonoBehaviour
 
     int levelIndex;
 
+    public int numObstacles;
+
     [SerializeField]
     Player player;
     PlayerData data;
@@ -34,6 +36,19 @@ public class Spawn : MonoBehaviour
         levelIndex = SceneManager.GetActiveScene().buildIndex - 3;
         Load();
         bestUI.text = "Best: " + best.ToString();
+
+        switch (player.mode)
+        {
+            case 0:
+                numObstacles = obj.Length / 3;
+                break;
+            case 1:
+                numObstacles = (2 * obj.Length) / 3;
+                break;
+            default:
+                numObstacles = obj.Length;
+                break;
+        }
     }
 
     // Start is called before the first frame update
@@ -91,7 +106,7 @@ public class Spawn : MonoBehaviour
     void CreateObsticle()
     {
         GameObject obsticle =  !justShowLast
-            ? Instantiate(obj[Random.Range(0, obj.Length)], transform.position, Quaternion.identity) 
+            ? Instantiate(obj[Random.Range(0, numObstacles)], transform.position, Quaternion.identity) 
             : Instantiate(obj[ obj.Length - 1], transform.position, Quaternion.identity);
         
         Destroy(obsticle, speed + 1.5f);
@@ -130,6 +145,7 @@ public class Spawn : MonoBehaviour
 
         //player.scoresList = data.scoresList;   uncomment this in future update
         player.adCount = data.adCount;
+        player.mode = data.mode;
     }
 
     public void AddToScore(int add)

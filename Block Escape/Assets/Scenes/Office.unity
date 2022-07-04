@@ -1003,6 +1003,7 @@ MonoBehaviour:
   scoresList: 
   adCount: 0
   selectedLevel: 0
+  mode: 0
 --- !u!4 &395735686
 Transform:
   m_ObjectHideFlags: 0
@@ -3182,8 +3183,8 @@ Transform:
   m_LocalScale: {x: 4.9248, y: 4.9248, z: 1.8391511}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1470410704}
   - {fileID: 1815647446}
+  - {fileID: 1470410704}
   m_Father: {fileID: 2069250849}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3632,9 +3633,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj:
+  - {fileID: 4383870036690303999, guid: f5547611c7c044fbea3032cdc4d5c5b8, type: 3}
   - {fileID: 293749843748555411, guid: 03ab35458b5cc46998e7aa059f29539d, type: 3}
   - {fileID: 5524443747681866640, guid: c62651018753247f4b328ff4381d26a3, type: 3}
-  - {fileID: 4383870036690303999, guid: f5547611c7c044fbea3032cdc4d5c5b8, type: 3}
   - {fileID: 6370385957034091839, guid: d77c31bdc417c43f9be1b39150484a06, type: 3}
   - {fileID: 3533757884773774353, guid: e6a846a2d181b4022997b0c500df4948, type: 3}
   - {fileID: 7611830432565372586, guid: 020488e593d00754fa72f0006e38976e, type: 3}
@@ -3645,6 +3646,7 @@ MonoBehaviour:
   bestUI: {fileID: 2138772973}
   best: 0
   justShowLast: 0
+  numObstacles: 0
   player: {fileID: 395735685}
 --- !u!1 &1420942048
 GameObject:
