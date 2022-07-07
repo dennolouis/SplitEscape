@@ -127,6 +127,11 @@ public class Spawn : MonoBehaviour
     public void Save()
     {
         SaveSystem.Save(player);
+
+        if(player.mode == 2)
+        {
+            CloudOnceServices.instance.SubmitScoreToLeaderBoard(score, levelIndex);
+        }
     }
 
     public void Load()

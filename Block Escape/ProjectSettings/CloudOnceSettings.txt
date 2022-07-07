@@ -1,0 +1,33 @@
+{
+	"AchievementIDs":[],
+	"LeaderboardIDs":[
+		{
+			"InternalID":"world1",
+			"AppleID":"world1",
+			"GoogleID":"CgkI_O_WpbYSEAIQAQ"
+		},
+		{
+			"InternalID":"world2",
+			"AppleID":"world2",
+			"GoogleID":"CgkI_O_WpbYSEAIQAg"
+		},
+		{
+			"InternalID":"world3",
+			"AppleID":"world3",
+			"GoogleID":"CgkI_O_WpbYSEAIQAw"
+		},
+		{
+			"InternalID":"world4",
+			"AppleID":"world4",
+			"GoogleID":"CgkI_O_WpbYSEAIQBA"
+		}
+	],
+	"CloudVariables":[],
+	"AppleSupported":true,
+	"GoogleSupported":true,
+	"GoogleAppID":"633049823228",
+	"GoogleSetupRun":true,
+	"DebugModeEnabled":false,
+	"Version":"2.7.5",
+	"SettingsLocation":"0"
+}
