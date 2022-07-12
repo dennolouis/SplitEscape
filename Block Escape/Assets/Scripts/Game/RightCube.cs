@@ -167,7 +167,7 @@ public class RightCube : MonoBehaviour
         immune = true;
         Time.timeScale = 1;
         //this is what makes you immune for one second
-        Invoke("MakeVulnerable", 1);
+        Invoke("MakeVulnerable", 2);
     }
 }
 

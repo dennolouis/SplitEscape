@@ -15,24 +15,38 @@ public class SelectionHandler : MonoBehaviour
     public AudioSource invalid;
     public GameObject lockIMG;
     public GameObject description;
+    public GameObject modes;
+    public Button easy;
+    public Button medium;
+    public Button hard;
     int selectedLevel;
     int combinedScore;
 
+    PlayerBallDisplay playerBallDisplay;
+
     PlayerData playerData;
+    Player player;
 
     Level[] levels =
     {
         new Level("Tutorial", 0),
-        new Level("World 1/3", 0),
-        new Level("World 2/3", 100),
-        new Level("World 3/3", 300),
+        new Level("World 1/4", 0),
+        new Level("World 2/4", 0),
+        new Level("World 3/4", 0),
+        new Level("world 4/4", 0)
     };
 
 
     private void Start()
     {
-        playerData = SaveSystem.Load();
 
+        Load();
+
+        playerBallDisplay = FindObjectOfType<PlayerBallDisplay>();
+
+        UpdatePlayerBall();
+
+        modes.SetActive(false);
         description.SetActive(false);
         lockIMG.SetActive(false);
         combinedScore = 0;
@@ -41,7 +55,7 @@ public class SelectionHandler : MonoBehaviour
             combinedScore += score;
         }
 
-        selectedLevel = combinedScore > 0? 1: 0;
+        //selectedLevel = player.selectedLevel;//combinedScore > 0? 1: 0;
         SetLevel();
 
         
@@ -51,40 +65,46 @@ public class SelectionHandler : MonoBehaviour
 
     public void Next()
     {
-        if(selectedLevel < levels.Length - 1)
+        if(player.selectedLevel < levels.Length - 1)
         {
-            selectedLevel += 1;
-            SetLevel();
+            player.selectedLevel += 1;
             valid.Play();
         }
         else
         {
             invalid.Play();
+            player.selectedLevel = 0;
         }
+
+        SetLevel();
     }
 
     public void Previous()
     {
-        if (selectedLevel > 0)
+        if (player.selectedLevel > 0)
         {
-            selectedLevel -= 1;
-            SetLevel();
+            player.selectedLevel -= 1;
             valid.Play();
         }
         else
         {
             invalid.Play();
+            player.selectedLevel = levels.Length - 1;
         }
+
+        SetLevel();
     }
 
     void SetLevel()
     {
-        level.text = levels[selectedLevel].name;
-        scoreTMP.text = "Best: " + playerData.levelScores[selectedLevel].ToString();
-        if(levels[selectedLevel].amount > combinedScore)
+        UpdatePlayerBall();
+
+        level.text = levels[player.selectedLevel].name;
+        scoreTMP.text = "Best: " + playerData.levelScores[player.selectedLevel].ToString();
+        if(levels[player.selectedLevel].amount > combinedScore)
         {
             lockIMG.SetActive(true);
-            lockText.text = "Total Score < " + levels[selectedLevel].amount.ToString();
+            lockText.text = "Total Score < " + levels[player.selectedLevel].amount.ToString();
             scoreTMP.gameObject.SetActive(false);
             playButton.interactable = false;
         }
@@ -94,11 +114,37 @@ public class SelectionHandler : MonoBehaviour
             scoreTMP.gameObject.SetActive(true);
             playButton.interactable = true;
         }
+        HideModes();
     }
 
     public void Play()
     {
-        FindObjectOfType<LevelChanger>().FadeToLevel(selectedLevel + 3);
+        Save();
+        FindObjectOfType<LevelChanger>().FadeToLevel(player.selectedLevel + 3);
+    }
+
+    public void ShowModes()
+    {
+        if(player.selectedLevel == 0)
+        {
+            Play();
+            return;
+        }
+
+        medium.interactable = playerData.levelScores[player.selectedLevel] >= 40;
+        hard.interactable = playerData.levelScores[player.selectedLevel] >= 80;
+
+        modes.SetActive(true);
+    }
+    public void HideModes()
+    {
+        modes.SetActive(false);
+    }
+
+    public void SetMode(int mode)
+    {
+        player.mode = mode;
+        Play();
     }
 
     public void ShowDescription()
@@ -122,6 +168,35 @@ public class SelectionHandler : MonoBehaviour
             this.name = name;
             this.amount = amount;
         }
+    }
+
+    void Save()
+    {
+        SaveSystem.Save(player);
+    }
+
+    void Load()
+    {   
+        player = FindObjectOfType<Player>();
+        playerData = SaveSystem.Load();
+
+        for (int i = 0; i < player.levelScores.Length; i++)
+        {
+            player.levelScores[i] = playerData.levelScores[i];
+            player.scoresList.Add(playerData.levelScores[i]); //comment this out in future update
+        }
+
+        //player.scoresList = data.scoresList;   uncomment this in future update
+        player.adCount = playerData.adCount;
+        player.selectedLevel = playerData.selectedLevel;
+        player.mode = playerData.mode;
+
+    }
+
+    void UpdatePlayerBall()
+    {
+        playerBallDisplay.Clear();
+        playerBallDisplay.ShowPlayerBall(player.selectedLevel - 1);
     }
 
 }
