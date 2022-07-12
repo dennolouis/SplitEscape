@@ -22,6 +22,8 @@ public class SelectionHandler : MonoBehaviour
     int selectedLevel;
     int combinedScore;
 
+    PlayerBallDisplay playerBallDisplay;
+
     PlayerData playerData;
     Player player;
 
@@ -39,6 +41,11 @@ public class SelectionHandler : MonoBehaviour
     {
 
         Load();
+
+        playerBallDisplay = FindObjectOfType<PlayerBallDisplay>();
+
+        UpdatePlayerBall();
+
         modes.SetActive(false);
         description.SetActive(false);
         lockIMG.SetActive(false);
@@ -90,6 +97,8 @@ public class SelectionHandler : MonoBehaviour
 
     void SetLevel()
     {
+        UpdatePlayerBall();
+
         level.text = levels[player.selectedLevel].name;
         scoreTMP.text = "Best: " + playerData.levelScores[player.selectedLevel].ToString();
         if(levels[player.selectedLevel].amount > combinedScore)
@@ -182,6 +191,12 @@ public class SelectionHandler : MonoBehaviour
         player.selectedLevel = playerData.selectedLevel;
         player.mode = playerData.mode;
 
+    }
+
+    void UpdatePlayerBall()
+    {
+        playerBallDisplay.Clear();
+        playerBallDisplay.ShowPlayerBall(player.selectedLevel - 1);
     }
 
 }
