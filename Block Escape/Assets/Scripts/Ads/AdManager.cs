@@ -18,7 +18,7 @@ string gameID = "";
 
     private void Start()
     {
-        Advertisement.Initialize(gameId, testMode);
+        Advertisement.Initialize(gameID, testMode);
     }
    
 
