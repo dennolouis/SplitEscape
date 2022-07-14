@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     public static Player instance;
 
-    //public int[] levelScores = new int[5];
     public List<int> scoresList = new List<int>();
     public List<bool> unlockedList = new List<bool>();
     public int adCount = 0;
@@ -14,11 +13,14 @@ public class Player : MonoBehaviour
     public int mode = 0; //easy 0, medium 1, hard 1
     public int balance = 0;
 
+    [SerializeField]
+    int numberOfLevels = 6;
+
     private void Awake()
     {
         TestSingleton();
         Load();
-        EnsureListLength(6);
+        EnsureListLength();
     }
 
     void TestSingleton()
@@ -33,12 +35,13 @@ public class Player : MonoBehaviour
         PlayerData playerData = SaveSystem.Load();
 
         instance.scoresList = playerData.scoresList;
+        instance.unlockedList = playerData.unlockedList;
         instance.adCount = playerData.adCount;
         instance.selectedLevel = playerData.selectedLevel;
         instance.mode = playerData.mode;
     }
 
-    void EnsureListLength(int numberOfLevels)
+    void EnsureListLength()
     {
         while (scoresList.Count < numberOfLevels)
         {

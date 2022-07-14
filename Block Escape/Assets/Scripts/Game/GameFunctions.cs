@@ -34,7 +34,7 @@ public class GameFunctions : MonoBehaviour
     public Scroll scroll;
     public ContinueTimer continueTimer;
 
-    public Player player;
+    //public Player player;
     
     void Awake()
     {
@@ -113,7 +113,7 @@ public class GameFunctions : MonoBehaviour
     void MaybeShowAd()
     {
         
-        if (player.adCount > 5 && adsLoaded)
+        if (Player.instance.adCount > 5 && adsLoaded)
         {
             gameOver = true;
             AudioListener.pause = true;

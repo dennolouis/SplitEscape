@@ -16,9 +16,12 @@ public class PlayerData
 
     public PlayerData(Player player)
     {
+        scoresList = player.scoresList;
+        unlockedList = player.unlockedList;
         adCount = player.adCount;
         selectedLevel = player.selectedLevel;
         mode = player.mode;
+        balance = player.balance;
     }
 
     public PlayerData()

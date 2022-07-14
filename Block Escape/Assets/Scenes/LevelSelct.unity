@@ -6189,13 +6189,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8bb0951a89d4f20bb467a283951688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelScores: 0000000000000000000000000000000000000000
   scoresList: 
   unlockedList: 
   adCount: 0
   selectedLevel: 0
   mode: 0
   balance: 0
+  numberOfLevels: 6
 --- !u!4 &2095093152
 Transform:
   m_ObjectHideFlags: 0

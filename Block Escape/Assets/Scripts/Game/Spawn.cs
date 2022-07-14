@@ -113,11 +113,6 @@ public class Spawn : MonoBehaviour
             speed -= rate * Time.deltaTime;
     }
 
-    public void test()
-    {
-        print("it works");
-    }
-
 
     public void Save()
     {
