@@ -24,9 +24,6 @@ public class SelectionHandler : MonoBehaviour
 
     PlayerBallDisplay playerBallDisplay;
 
-    PlayerData playerData;
-    Player player;
-
     Level[] levels =
     {
         new Level("Tutorial", 0),
@@ -41,7 +38,6 @@ public class SelectionHandler : MonoBehaviour
     private void Start()
     {
 
-        Load();
 
         playerBallDisplay = FindObjectOfType<PlayerBallDisplay>();
 
@@ -52,11 +48,6 @@ public class SelectionHandler : MonoBehaviour
         lockIMG.SetActive(false);
         combinedScore = 0;
 
-        foreach(int score in playerData.levelScores){
-            combinedScore += score;
-        }
-
-        //selectedLevel = player.selectedLevel;//combinedScore > 0? 1: 0;
         SetLevel();
 
         
@@ -66,15 +57,15 @@ public class SelectionHandler : MonoBehaviour
 
     public void Next()
     {
-        if(player.selectedLevel < levels.Length - 1)
+        if(Player.instance.selectedLevel < levels.Length - 1)
         {
-            player.selectedLevel += 1;
+            Player.instance.selectedLevel += 1;
             valid.Play();
         }
         else
         {
             invalid.Play();
-            player.selectedLevel = 0;
+            Player.instance.selectedLevel = 0;
         }
 
         SetLevel();
@@ -82,15 +73,15 @@ public class SelectionHandler : MonoBehaviour
 
     public void Previous()
     {
-        if (player.selectedLevel > 0)
+        if (Player.instance.selectedLevel > 0)
         {
-            player.selectedLevel -= 1;
+            Player.instance.selectedLevel -= 1;
             valid.Play();
         }
         else
         {
             invalid.Play();
-            player.selectedLevel = levels.Length - 1;
+            Player.instance.selectedLevel = levels.Length - 1;
         }
 
         SetLevel();
@@ -100,9 +91,9 @@ public class SelectionHandler : MonoBehaviour
     {
         UpdatePlayerBall();
 
-        level.text = levels[player.selectedLevel].name;
-        scoreTMP.text = "Best: " + player.scoresList[player.selectedLevel].ToString();
-        if(!player.unlockedList[player.selectedLevel])
+        level.text = levels[Player.instance.selectedLevel].name;
+        scoreTMP.text = "Best: " + Player.instance.scoresList[Player.instance.selectedLevel].ToString();
+        if(!Player.instance.unlockedList[Player.instance.selectedLevel])
         {
             lockIMG.SetActive(true);
             lockText.text = "300";
@@ -121,19 +112,19 @@ public class SelectionHandler : MonoBehaviour
     public void Play()
     {
         Save();
-        FindObjectOfType<LevelChanger>().FadeToLevel(player.selectedLevel + 3);
+        FindObjectOfType<LevelChanger>().FadeToLevel(Player.instance.selectedLevel + 3);
     }
 
     public void ShowModes()
     {
-        if(player.selectedLevel == 0)
+        if(Player.instance.selectedLevel == 0)
         {
             Play();
             return;
         }
 
-        medium.interactable = playerData.levelScores[player.selectedLevel] >= 40;
-        hard.interactable = playerData.levelScores[player.selectedLevel] >= 80;
+        medium.interactable = Player.instance.scoresList[Player.instance.selectedLevel] >= 40;
+        hard.interactable = Player.instance.scoresList[Player.instance.selectedLevel] >= 80;
 
         modes.SetActive(true);
     }
@@ -144,7 +135,7 @@ public class SelectionHandler : MonoBehaviour
 
     public void SetMode(int mode)
     {
-        player.mode = mode;
+        Player.instance.mode = mode;
         Play();
     }
 
@@ -173,31 +164,14 @@ public class SelectionHandler : MonoBehaviour
 
     void Save()
     {
-        SaveSystem.Save(player);
+        SaveSystem.Save(Player.instance);
     }
 
-    void Load()
-    {   
-        player = FindObjectOfType<Player>();
-        playerData = SaveSystem.Load();
-
-        for (int i = 0; i < player.levelScores.Length; i++)
-        {
-            player.levelScores[i] = playerData.levelScores[i];
-            player.scoresList.Add(playerData.levelScores[i]); //comment this out in future update
-        }
-
-        //player.scoresList = data.scoresList;   uncomment this in future update
-        player.adCount = playerData.adCount;
-        player.selectedLevel = playerData.selectedLevel;
-        player.mode = playerData.mode;
-
-    }
 
     void UpdatePlayerBall()
     {
         playerBallDisplay.Clear();
-        playerBallDisplay.ShowPlayerBall(player.selectedLevel - 1);
+        playerBallDisplay.ShowPlayerBall(Player.instance.selectedLevel - 1);
     }
 
 }

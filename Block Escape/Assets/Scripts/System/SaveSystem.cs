@@ -32,8 +32,6 @@ public static class SaveSystem
 
             stream.Close();
 
-            //data.EnsureValidData();
-
             return data;
 
         }

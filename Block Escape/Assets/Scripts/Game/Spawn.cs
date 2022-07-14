@@ -27,17 +27,13 @@ public class Spawn : MonoBehaviour
 
     public int numObstacles;
 
-    [SerializeField]
-    Player player;
-    PlayerData data;
 
     private void Awake()
     {
         levelIndex = SceneManager.GetActiveScene().buildIndex - 3;
-        Load();
         bestUI.text = "Best: " + best.ToString();
 
-        switch (player.mode)
+        switch (Player.instance.mode)
         {
             case 0:
                 numObstacles = obj.Length / 3;
@@ -58,10 +54,9 @@ public class Spawn : MonoBehaviour
         initSpeed = speed;
         initRate = rate;
 
-        player = FindObjectOfType<Player>();
-        player.selectedLevel = levelIndex;
-        player.adCount += 1;
-        if (player.adCount > 6) player.adCount = 0;
+        Player.instance.selectedLevel = levelIndex;
+        Player.instance.adCount += 1;
+        if (Player.instance.adCount > 6) Player.instance.adCount = 0;
         Invoke("Init", speed/2);
 
     }
@@ -97,7 +92,7 @@ public class Spawn : MonoBehaviour
         if (score > best)
         {
             best = score;
-            player.levelScores[levelIndex] = score;
+            Player.instance.scoresList[levelIndex] = score;
             bestUI.text = "Best: " + best.ToString();
         }
     
@@ -126,31 +121,12 @@ public class Spawn : MonoBehaviour
 
     public void Save()
     {
-        SaveSystem.Save(player);
+        SaveSystem.Save(Player.instance);
 
-        if(player.mode == 2)
+        if(Player.instance.mode == 2)
         {
             CloudOnceServices.instance.SubmitScoreToLeaderBoard(score, levelIndex);
         }
-    }
-
-    public void Load()
-    {
-        data = SaveSystem.Load();
-
-        best = data.levelScores[levelIndex];
-
-
-
-        for(int i = 0; i < player.levelScores.Length; i++)
-        {
-            player.levelScores[i] = data.levelScores[i];
-            player.scoresList.Add(data.levelScores[i]); //comment this out in future update
-        }
-
-        //player.scoresList = data.scoresList;   uncomment this in future update
-        player.adCount = data.adCount;
-        player.mode = data.mode;
     }
 
     public void AddToScore(int add)
