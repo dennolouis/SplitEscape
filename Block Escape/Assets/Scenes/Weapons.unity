@@ -874,11 +874,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8bb0951a89d4f20bb467a283951688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelScores: 0000000000000000000000000000000000000000
   scoresList: 
+  unlockedList: 
   adCount: 0
   selectedLevel: 0
   mode: 0
+  balance: 0
+  numberOfLevels: 6
 --- !u!4 &395735686
 Transform:
   m_ObjectHideFlags: 0
@@ -2630,7 +2632,6 @@ MonoBehaviour:
   spawn: {fileID: 1387363616}
   scroll: {fileID: 2069250850}
   continueTimer: {fileID: 1420942053}
-  player: {fileID: 395735685}
 --- !u!224 &1174289981 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7542932633083102662, guid: 863a6b5dc7ac9460a9a1259096d10977, type: 3}
@@ -3680,6 +3681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27f77582487957478c09230f535ccb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diamonds: {fileID: 8581096483240409416, guid: 25af61c347f2247d7ab21f97f824174f, type: 3}
   obj:
   - {fileID: 2645284299106678265, guid: 3d663e11d799d46d686ffd7b0ab128e7, type: 3}
   - {fileID: 8783563702456107155, guid: 8f5fc12f98ec64706a57d4c4a8308dd6, type: 3}
@@ -3695,7 +3697,6 @@ MonoBehaviour:
   best: 0
   justShowLast: 0
   numObstacles: 0
-  player: {fileID: 395735685}
 --- !u!1 &1420942048
 GameObject:
   m_ObjectHideFlags: 0

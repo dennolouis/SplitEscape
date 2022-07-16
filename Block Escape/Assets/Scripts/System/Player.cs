@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public List<bool> unlockedList = new List<bool>();
     public int adCount = 0;
     public int selectedLevel = 0;
-    public int mode = 0; //easy 0, medium 1, hard 1
+    public int mode = 0; //easy 0, medium 1, hard 2
     public int balance = 0;
 
     [SerializeField]
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         instance.adCount = playerData.adCount;
         instance.selectedLevel = playerData.selectedLevel;
         instance.mode = playerData.mode;
+        instance.balance = playerData.balance;
     }
 
     void EnsureListLength()
@@ -57,6 +58,11 @@ public class Player : MonoBehaviour
         {
             instance.unlockedList[i] = true;
         }
+    }
+
+    public void AddToBalance()
+    {
+        balance++;
     }
 
 }

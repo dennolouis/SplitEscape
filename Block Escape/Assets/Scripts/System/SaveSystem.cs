@@ -37,9 +37,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("save file not found");
-            PlayerData data = new PlayerData();
-            return data;
+            return new PlayerData();
         }
     }
 }

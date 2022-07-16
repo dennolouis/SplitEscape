@@ -98,6 +98,14 @@ public class RightCube : MonoBehaviour
         if(other.gameObject.tag == "Finish")
             gameFunctions.LoadGameScreen();
 
+        if (other.gameObject.tag == "Diamond")
+        {
+            Player.instance.AddToBalance();
+            Destroy(other.gameObject);
+            return;
+        }
+
+
         if (other.gameObject.tag == "ColorObsticle")
         {
             if (other.gameObject.GetComponent<MeshRenderer>().sharedMaterial != gameObject.GetComponent<MeshRenderer>().sharedMaterial)

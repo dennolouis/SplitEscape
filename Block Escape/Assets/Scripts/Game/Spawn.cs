@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 public class Spawn : MonoBehaviour
 {
 
+    [SerializeField] GameObject diamonds;
+    Diamond[] diamondChildren;
+
     public GameObject[] obj;
     public float speed = 2;
     public float rate = 0.4f;
@@ -31,7 +34,6 @@ public class Spawn : MonoBehaviour
     private void Awake()
     {
         levelIndex = SceneManager.GetActiveScene().buildIndex - 3;
-        bestUI.text = "Best: " + best.ToString();
 
         switch (Player.instance.mode)
         {
@@ -57,8 +59,11 @@ public class Spawn : MonoBehaviour
         Player.instance.selectedLevel = levelIndex;
         Player.instance.adCount += 1;
         if (Player.instance.adCount > 6) Player.instance.adCount = 0;
-        Invoke("Init", speed/2);
 
+        best = Player.instance.scoresList[Player.instance.selectedLevel];
+        bestUI.text = "Best: " + best.ToString();
+
+        Invoke("Init", speed/2);
     }
 
     public void resetValues()
@@ -72,8 +77,8 @@ public class Spawn : MonoBehaviour
     void Init()
     {
         //only continue if game is not over
-        if (!FindObjectOfType<GameFunctions>().GetGameState())
-            Invoke("Init", speed);
+        //if (!FindObjectOfType<GameFunctions>().GetGameState())
+        Invoke("Init", speed);
         
         CreateObsticle();
         HandleScore();
@@ -105,6 +110,9 @@ public class Spawn : MonoBehaviour
             : Instantiate(obj[ obj.Length - 1], transform.position, Quaternion.identity);
         
         Destroy(obsticle, speed + 1.5f);
+
+        GameObject diamond = Instantiate(diamonds, transform.position, Quaternion.identity);
+        Destroy(diamond, speed + 1.5f);
     }
 
     void HandleSpeed()
@@ -112,7 +120,6 @@ public class Spawn : MonoBehaviour
         if (speed > 0.8)
             speed -= rate * Time.deltaTime;
     }
-
 
     public void Save()
     {

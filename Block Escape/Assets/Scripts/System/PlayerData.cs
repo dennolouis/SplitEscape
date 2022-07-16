@@ -5,8 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-
-    //public int[] levelScores = new int[5];
     public List<int> scoresList = new List<int>();
     public List<bool> unlockedList = new List<bool>();
     public int adCount;
