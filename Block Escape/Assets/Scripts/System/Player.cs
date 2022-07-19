@@ -63,6 +63,6 @@ public class Player : MonoBehaviour
     public void AddToBalance()
     {
         balance++;
+        GetComponent<AudioSource>().Play();
     }
-
 }

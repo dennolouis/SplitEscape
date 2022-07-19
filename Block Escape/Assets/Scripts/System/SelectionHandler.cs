@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SelectionHandler : MonoBehaviour
 {
     public Button playButton;
-    public TextMeshProUGUI totalScoreTMP;
+    public TextMeshProUGUI balance;
     public TextMeshProUGUI level;
     public TextMeshProUGUI scoreTMP;
     public TextMeshProUGUI lockText;
@@ -50,9 +50,9 @@ public class SelectionHandler : MonoBehaviour
 
         SetLevel();
 
-        
 
-        totalScoreTMP.text = "Total Score: " + combinedScore.ToString();
+
+        balance.text = Player.instance.balance.ToString();
     }
 
     public void Next()
