@@ -5,7 +5,6 @@ using System.Linq;
 #if UNITY_ANDROID
 using Unity.Notifications.Android;
 #elif UNITY_IOS
-using NotificationSamples.iOS;
 #endif
 using UnityEngine;
 
@@ -29,8 +28,8 @@ public class PushNoti: MonoBehaviour
         
                 notification.Title = "Split Escape!";
                 notification.Text = "Come and Get Your FREE 50 Diamonds!";
-                notification.SmallIcon = "SE_Icon_small";
-                notification.LargeIcon = "SE_Icon_Full";
+                notification.SmallIcon = "se_icon_small";
+                notification.LargeIcon = "se_icon_large";
                 notification.FireTime = System.DateTime.Now.AddSeconds(10);
 
             
