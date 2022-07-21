@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.099126585, g: 0.10414282, b: 0.1947566, a: 1}
+  m_IndirectSpecularColor: {r: 0.09927634, g: 0.10432831, b: 0.19516444, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1806,6 +1806,7 @@ GameObject:
   - component: {fileID: 682545708}
   - component: {fileID: 682545711}
   - component: {fileID: 682545712}
+  - component: {fileID: 682545713}
   m_Layer: 5
   m_Name: Gift
   m_TagString: Untagged
@@ -2037,6 +2038,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &682545713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682545706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e73d5291d22dcf4b8b848015348980e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

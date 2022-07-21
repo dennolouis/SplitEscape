@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+#if UNITY_ANDROID
+using Unity.Notifications.Android;
+#elif UNITY_IOS
+using NotificationSamples.iOS;
+#endif
+using UnityEngine;
+
+public class PushNoti: MonoBehaviour
+{
+    #if UNITY_ANDROID
+
+        private void Start() 
+        {
+            var channel = new AndroidNotificationChannel()
+            {
+                Id = "channel_droid",
+                Name = "Droid Channel",
+                Importance = Importance.Default,
+                Description = "Boner notifications",
+            };
+
+            AndroidNotificationCenter.RegisterNotificationChannel(channel);
+
+            var notification = new AndroidNotification();
+        
+                notification.Title = "Split Escape!";
+                notification.Text = "Come and Get Your FREE 50 Diamonds!";
+                notification.SmallIcon = "SE_Icon_small";
+                notification.LargeIcon = "SE_Icon_Full";
+                notification.FireTime = System.DateTime.Now.AddSeconds(10);
+
+            
+            AndroidNotificationCenter.SendNotification(notification, "channel_droid");
+        }
+    #endif
+
+    #if UNITY_IOS
+        var timeTrigger = new iOSNotificationTimeIntervalTrigger()
+        {
+        TimeInterval = new TimeSpan(0, minutes, 10),
+        Repeats = false
+        };
+
+        var notification = new iOSNotification()
+        {
+
+        Identifier = "channel_IOS",
+        Title = "SPLIT ESCAPE!",
+        Body = "Scheduled at: " + DateTime.Now.ToShortDateString(10) + " triggered in 10 seconds",
+        Subtitle = "Come and Get Your FREE 50 Diamonds!",
+        ShowInForeground = true,
+        ForegroundPresentationOption = (PresentationOption.Alert | PresentationOption.Sound),
+        CategoryIdentifier = "category_reminder",
+        ThreadIdentifier = "thread1",
+        Trigger = timeTrigger,
+        };
+    #endif
+}

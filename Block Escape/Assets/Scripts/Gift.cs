@@ -9,9 +9,9 @@ public class Gift : MonoBehaviour
     [SerializeField] GameObject floatingText;
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    private void Awake() {
+        GetComponent<Button>().interactable = false;
+
     }
 
     public void AddDiamonds()
@@ -22,4 +22,9 @@ public class Gift : MonoBehaviour
         floatingText.SetActive(true);
         GetComponent<Button>().interactable = false;
     }
+    public void MakeInteractable(){
+        GetComponent<Button>().interactable = true;
+    }
+
+    
 }
