@@ -2,6 +2,7 @@
 using Unity.Notifications.Android;
 #elif UNITY_IOS
 #endif
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PushNoti: MonoBehaviour
@@ -28,8 +29,10 @@ public class PushNoti: MonoBehaviour
                 notification.LargeIcon = "se_icon_large";
                 notification.FireTime = System.DateTime.Now.AddSeconds(10);
                 Debug.Log("Timer is up");
+                Debug.Log("Gidt should now be interactive!");
             
             AndroidNotificationCenter.SendNotification(notification, "channel_droid");
+            
         }
     #endif
 

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-
+using Unity.Notifications.Android;
 
 public class Gift : MonoBehaviour
 {
 
     [SerializeField] GameObject floatingText;
-    private float startTime;
+    
 
     // Start is called before the first frame update
     private void Awake() {

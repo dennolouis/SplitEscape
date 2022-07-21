@@ -16,11 +16,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     int numberOfLevels = 6;
 
+    [SerializeField] string targetTime;
+
     private void Awake()
     {
         TestSingleton();
         Load();
         EnsureListLength();
+        targetTime = System.DateTime.Now.AddSeconds(10).ToString();
     }
 
     void TestSingleton()
