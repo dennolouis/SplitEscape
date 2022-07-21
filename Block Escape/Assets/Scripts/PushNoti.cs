@@ -21,18 +21,22 @@ public class PushNoti: MonoBehaviour
 
             AndroidNotificationCenter.RegisterNotificationChannel(channel);
 
+
             var notification = new AndroidNotification();
-        
                 notification.Title = "Split Escape!";
                 notification.Text = "Come and Get Your FREE 50 Diamonds!";
                 notification.SmallIcon = "se_icon_small";
                 notification.LargeIcon = "se_icon_large";
                 notification.FireTime = System.DateTime.Now.AddSeconds(10);
                 Debug.Log("Timer is up");
-                Debug.Log("Gidt should now be interactive!");
+                Debug.Log("Gift should now be interactive!");
+
+
             
-            AndroidNotificationCenter.SendNotification(notification, "channel_droid");
-            
+            if ( AndroidNotificationCenter.CheckScheduledNotificationStatus(0) == NotificationStatus.Delivered ){
+                FindObjectOfType<Gift>().MakeInteractable();
+                AndroidNotificationCenter.SendNotification(notification, "channel_droid");
+            }
         }
     #endif
 
