@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 #if UNITY_ANDROID
 using Unity.Notifications.Android;
 #elif UNITY_IOS
@@ -31,31 +27,34 @@ public class PushNoti: MonoBehaviour
                 notification.SmallIcon = "se_icon_small";
                 notification.LargeIcon = "se_icon_large";
                 notification.FireTime = System.DateTime.Now.AddSeconds(10);
-
+                Debug.Log("Timer is up");
             
             AndroidNotificationCenter.SendNotification(notification, "channel_droid");
         }
     #endif
 
     #if UNITY_IOS
-        var timeTrigger = new iOSNotificationTimeIntervalTrigger()
-        {
-        TimeInterval = new TimeSpan(0, minutes, 10),
-        Repeats = false
-        };
+    
+        private void Start() {
+            var timeTrigger = new iOSNotificationTimeIntervalTrigger()
+            {
+                TimeInterval = new TimeSpan(0, minutes, 10),
+                Repeats = false
+            };
 
-        var notification = new iOSNotification()
-        {
-
-        Identifier = "channel_IOS",
-        Title = "SPLIT ESCAPE!",
-        Body = "Scheduled at: " + DateTime.Now.ToShortDateString(10) + " triggered in 10 seconds",
-        Subtitle = "Come and Get Your FREE 50 Diamonds!",
-        ShowInForeground = true,
-        ForegroundPresentationOption = (PresentationOption.Alert | PresentationOption.Sound),
-        CategoryIdentifier = "category_reminder",
-        ThreadIdentifier = "thread1",
-        Trigger = timeTrigger,
-        };
+            var notification = new iOSNotification()
+            {
+                Identifier = "channel_IOS",
+                Title = "SPLIT ESCAPE!",
+                Body = "Scheduled at: " + DateTime.Now.ToShortDateString(10) + " triggered in 10 seconds",
+                Subtitle = "Come and Get Your FREE 50 Diamonds!",
+                ShowInForeground = true,
+                ForegroundPresentationOption = (PresentationOption.Alert | PresentationOption.Sound),
+                CategoryIdentifier = "category_reminder",
+                ThreadIdentifier = "thread1",
+                Trigger = timeTrigger,
+            };
+        }
+    
     #endif
 }
