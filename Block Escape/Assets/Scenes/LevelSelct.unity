@@ -1873,7 +1873,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 682545709}
   m_OnClick:
     m_PersistentCalls:
@@ -1941,6 +1941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingText: {fileID: 1231212487}
+  currentDate: 7/21/2022 12:00:00 AM
 --- !u!82 &682545712
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6691,6 +6692,7 @@ MonoBehaviour:
   mode: 0
   balance: 0
   numberOfLevels: 6
+  date: 
 --- !u!4 &2095093152
 Transform:
   m_ObjectHideFlags: 0

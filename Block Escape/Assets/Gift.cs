@@ -7,11 +7,20 @@ public class Gift : MonoBehaviour
 {
 
     [SerializeField] GameObject floatingText;
-    
+
+    Button gift;
+
+    [SerializeField] string currentDate;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gift = GetComponent<Button>();
+
+        currentDate = System.DateTime.Now.Date.ToString("yyyy-MM-dd");
+
+        gift.interactable = !currentDate.Equals(Player.instance.date);
+
     }
 
     public void AddDiamonds()
@@ -21,5 +30,6 @@ public class Gift : MonoBehaviour
         FindObjectOfType<SelectionHandler>().balance.text = Player.instance.balance.ToString();
         floatingText.SetActive(true);
         GetComponent<Button>().interactable = false;
+        Player.instance.date = currentDate;
     }
 }

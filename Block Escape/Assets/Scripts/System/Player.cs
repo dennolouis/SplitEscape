@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     int numberOfLevels = 6;
 
+
+    public string date = "";
+
     private void Awake()
     {
         TestSingleton();
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour
         instance.selectedLevel = playerData.selectedLevel;
         instance.mode = playerData.mode;
         instance.balance = playerData.balance;
+        instance.date = playerData.date;
     }
 
     void EnsureListLength()
