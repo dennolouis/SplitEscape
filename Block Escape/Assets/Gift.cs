@@ -32,4 +32,6 @@ public class Gift : MonoBehaviour
         GetComponent<Button>().interactable = false;
         Player.instance.date = currentDate;
     }
+
+    s
 }
