@@ -24,14 +24,14 @@ public class SelectionHandler : MonoBehaviour
 
     PlayerBallDisplay playerBallDisplay;
 
-    Level[] levels =
+    string[] levels =
     {
-        new Level("Tutorial", 0),
-        new Level("World 1/5", 0),
-        new Level("World 2/5", 0),
-        new Level("World 3/5", 0),
-        new Level("world 4/5", 0),
-        new Level("world 5/5", 10000)
+        "Tutorial",
+        "World 1/5",
+        "World 2/5",
+        "World 3/5",
+        "world 4/5",
+        "world 5/5"
     };
 
 
@@ -91,7 +91,7 @@ public class SelectionHandler : MonoBehaviour
     {
         UpdatePlayerBall();
 
-        level.text = levels[Player.instance.selectedLevel].name;
+        level.text = levels[Player.instance.selectedLevel];
         scoreTMP.text = "Best: " + Player.instance.scoresList[Player.instance.selectedLevel].ToString();
         if(!Player.instance.unlockedList[Player.instance.selectedLevel])
         {
@@ -147,19 +147,18 @@ public class SelectionHandler : MonoBehaviour
     {
         description.SetActive(false);
     }
-    struct Level
+
+    public void BuyLevel()
     {
-        public string name;
-        public int amount;
-
-        public string GetName() { return name; }
-        public int GetAmount() { return amount; }
-
-        public Level(string name, int amount)
+        if(Player.instance.balance < 300)
         {
-            this.name = name;
-            this.amount = amount;
+            invalid.Play();
+            return;
         }
+        Player.instance.GetComponent<AudioSource>().Play();
+        Player.instance.unlockedList[Player.instance.selectedLevel] = true;
+        Player.instance.balance -= 300;
+        SetLevel();
     }
 
     void Save()

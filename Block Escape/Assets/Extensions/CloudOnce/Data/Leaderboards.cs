@@ -46,7 +46,7 @@ namespace CloudOnce
 
         private static readonly UnifiedLeaderboard s_world3 = new UnifiedLeaderboard("world3",
 #if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
-            "world3"
+            "wolrd3"
 #elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
             "CgkI_O_WpbYSEAIQAw"
 #else
@@ -74,6 +74,21 @@ namespace CloudOnce
             get { return s_world4; }
         }
 
+        private static readonly UnifiedLeaderboard s_world5 = new UnifiedLeaderboard("world5",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            "world5"
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI_O_WpbYSEAIQBQ"
+#else
+            "world5"
+#endif
+            );
+
+        public static UnifiedLeaderboard world5
+        {
+            get { return s_world5; }
+        }
+
         public static string GetPlatformID(string internalId)
         {
             return s_leaderboardDictionary.ContainsKey(internalId)
@@ -86,7 +101,8 @@ namespace CloudOnce
             { "world1", s_world1 },
             { "world2", s_world2 },
             { "world3", s_world3 },
-            { "world4", s_world4 }
+            { "world4", s_world4 },
+            { "world5", s_world5 }
         };
     }
 }

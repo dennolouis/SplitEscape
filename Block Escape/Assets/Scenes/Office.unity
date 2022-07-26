@@ -1007,6 +1007,7 @@ MonoBehaviour:
   mode: 0
   balance: 0
   numberOfLevels: 6
+  date: 
 --- !u!4 &395735686
 Transform:
   m_ObjectHideFlags: 0
@@ -2812,7 +2813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1268275011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5355,6 +5356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2069250849}
     m_Modifications:
+    - target: {fileID: 360531074849495311, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae04e6782d3cc4059b60400879debd4d, type: 2}
     - target: {fileID: 361293990530481669, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_Name
       value: GameFram
@@ -5366,7 +5371,7 @@ PrefabInstance:
     - target: {fileID: 1418480325113572719, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f214d30499b7ca540a1746a3d8e9e05c, type: 2}
+      objectReference: {fileID: 2100000, guid: ae04e6782d3cc4059b60400879debd4d, type: 2}
     - target: {fileID: 2107466087673397705, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_Name
       value: LeftWall
