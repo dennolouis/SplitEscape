@@ -1550,7 +1550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 462998, guid: cb34250ae9427604f9aeac015096d161, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 462998, guid: cb34250ae9427604f9aeac015096d161, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4828,6 +4828,8 @@ MonoBehaviour:
   - {fileID: 2295574556868186042, guid: a20a9f7b27a68495aa578d1df24ba972, type: 3}
   - {fileID: 8904604138516661370, guid: 391b0a101dc154566b461332f13d6850, type: 3}
   - {fileID: 7219824803309266742, guid: a1726d61035ae48ab9540f40865b0eef, type: 3}
+  - {fileID: 45716284465203476, guid: 2205cee088257458aa81dc6817d11a78, type: 3}
+  - {fileID: 7893780638946864638, guid: 5a2719a5560144e13a572f01db9dc27d, type: 3}
   speed: 1.5
   rate: 1.8
   scoreUI: {fileID: 1537979950}
