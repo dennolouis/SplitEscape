@@ -6537,7 +6537,7 @@ MonoBehaviour:
   selectedLevel: 0
   mode: 0
   balance: 0
-  numberOfLevels: 6
+  numberOfLevels: 11
   date: 
 --- !u!4 &2095093152
 Transform:

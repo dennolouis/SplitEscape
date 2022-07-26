@@ -125,9 +125,19 @@ public class Spawn : MonoBehaviour
     {
         SaveSystem.Save(Player.instance);
 
+        if (!CloudOnceServices.instance)
+        {
+            print("no services");
+            return;
+        }
+
         if(Player.instance.mode == 2)
         {
             CloudOnceServices.instance.SubmitScoreToLeaderBoard(score, levelIndex);
+        }
+        else
+        {
+            CloudOnceServices.instance.SubmitScoreToLeaderBoard(0, levelIndex);
         }
     }
 

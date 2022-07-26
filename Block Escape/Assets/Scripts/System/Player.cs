@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public int balance = 0;
 
     [SerializeField]
-    int numberOfLevels = 6;
+    int numberOfLevels = 11;
 
 
     public string date = "";

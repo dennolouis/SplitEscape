@@ -155,6 +155,7 @@ public class SelectionHandler : MonoBehaviour
             invalid.Play();
             return;
         }
+        balance.text = Player.instance.balance.ToString();
         Player.instance.GetComponent<AudioSource>().Play();
         Player.instance.unlockedList[Player.instance.selectedLevel] = true;
         Player.instance.balance -= 300;
