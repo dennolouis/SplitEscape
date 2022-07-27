@@ -33,4 +33,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island.unity
     guid: 7f609bae9d42840d9adffd5aff5cb01f
+  - enabled: 1
+    path: Assets/Scenes/Streets.unity
+    guid: a12572e6ba9a9485986193b5e58ee3d9
   m_configObjects: {}

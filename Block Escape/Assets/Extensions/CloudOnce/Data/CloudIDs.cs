@@ -126,6 +126,26 @@ namespace CloudOnce
 #endif
                 }
             }
+
+            public static string world6
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI_O_WpbYSEAIQBg";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "world6";
+#elif UNITY_EDITOR
+                    return "world6";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
         }
     }
 }

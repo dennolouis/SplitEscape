@@ -27,11 +27,12 @@ public class SelectionHandler : MonoBehaviour
     string[] levels =
     {
         "Tutorial",
-        "World 1/5",
-        "World 2/5",
-        "World 3/5",
-        "world 4/5",
-        "world 5/5"
+        "World 1/6",
+        "World 2/6",
+        "World 3/6",
+        "world 4/6",
+        "world 5/6",
+        "world 6/6"
     };
 
 
