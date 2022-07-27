@@ -36,6 +36,9 @@ public class CloudOnceServices : MonoBehaviour
             case 4:
                 Leaderboards.world4.SubmitScore(score);
                 break;
+            case 5:
+                Leaderboards.world5.SubmitScore(score);
+                break;
         }
 
     }

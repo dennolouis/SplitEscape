@@ -96,7 +96,7 @@ public class SelectionHandler : MonoBehaviour
         if(!Player.instance.unlockedList[Player.instance.selectedLevel])
         {
             lockIMG.SetActive(true);
-            lockText.text = "300";
+            lockText.text = "500";
             scoreTMP.gameObject.SetActive(false);
             playButton.interactable = false;
         }
@@ -150,15 +150,15 @@ public class SelectionHandler : MonoBehaviour
 
     public void BuyLevel()
     {
-        if(Player.instance.balance < 300)
+        if(Player.instance.balance < 500)
         {
             invalid.Play();
             return;
         }
+        Player.instance.balance -= 500;
         balance.text = Player.instance.balance.ToString();
         Player.instance.GetComponent<AudioSource>().Play();
         Player.instance.unlockedList[Player.instance.selectedLevel] = true;
-        Player.instance.balance -= 300;
         SetLevel();
     }
 

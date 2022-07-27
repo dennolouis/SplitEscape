@@ -2203,6 +2203,24 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &959166336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2107466087673397705, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
+  m_PrefabInstance: {fileID: 4889070265567054588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &959166338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959166336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23b978c1cf134a4e9c5dee89d18cc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -0.1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6111,6 +6129,24 @@ MonoBehaviour:
   onTapEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1946535280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6135676728672219047, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
+  m_PrefabInstance: {fileID: 4889070265567054588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946535282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946535280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23b978c1cf134a4e9c5dee89d18cc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -0.1
 --- !u!1001 &1950171651
 PrefabInstance:
   m_ObjectHideFlags: 0
