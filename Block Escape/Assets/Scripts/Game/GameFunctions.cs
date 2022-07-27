@@ -90,11 +90,14 @@ public class GameFunctions : MonoBehaviour
 
         justGothit = true;
 
+       
+
         if (canContinue && adsLoaded)
         {
             continueButton.SetActive(true);
             canContinue = false;
             continueTimer.Show();
+            banner.ShowBannerAd();
         }
         else
         {
