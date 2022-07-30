@@ -571,6 +571,7 @@ MonoBehaviour:
   mode: 0
   balance: 0
   numberOfLevels: 6
+  date: 
 --- !u!4 &125586459
 Transform:
   m_ObjectHideFlags: 0
@@ -5712,7 +5713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Continue Ad
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41906953f81545b1a6b612d229e916c, type: 2}
   m_sharedMaterial: {fileID: 2000062151594140778, guid: c41906953f81545b1a6b612d229e916c, type: 2}

@@ -5778,6 +5778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23b978c1cf134a4e9c5dee89d18cc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  accelerate: 1
   speed: -1
 --- !u!1 &1705934920
 GameObject:
@@ -5837,7 +5838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Continue Ad
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41906953f81545b1a6b612d229e916c, type: 2}
   m_sharedMaterial: {fileID: 2000062151594140778, guid: c41906953f81545b1a6b612d229e916c, type: 2}

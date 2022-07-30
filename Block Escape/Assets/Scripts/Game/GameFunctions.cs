@@ -53,7 +53,9 @@ public class GameFunctions : MonoBehaviour
         rewardedAd = FindObjectOfType<RewardedAds>();
         banner = FindObjectOfType<BannerAd>();
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
-        banner.ShowBannerAd();
+
+
+        Invoke("ShowLateBannerAd", 2f);
 
         volume = FindObjectOfType<HanldeMute>();
     }
@@ -231,5 +233,10 @@ public class GameFunctions : MonoBehaviour
     {
         adErrorMessage.SetActive(true);
         adErrorMessage.GetComponent<Text>().text = message;
+    }
+
+    void ShowLateBannerAd()
+    {
+        banner.ShowBannerAd();
     }
 }

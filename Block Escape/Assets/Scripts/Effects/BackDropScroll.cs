@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BackDropScroll : MonoBehaviour
 {
+    [SerializeField] bool accelerate = false;
+
     public float speed = 100;
 
     float y;
@@ -22,6 +24,6 @@ public class BackDropScroll : MonoBehaviour
         y += speed * Time.deltaTime;
         GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, y));
 
-
+        speed = accelerate ? speed - 0.005f * Time.deltaTime : speed;
     }
 }

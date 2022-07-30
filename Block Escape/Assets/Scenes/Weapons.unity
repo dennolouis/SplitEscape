@@ -1481,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 5124dc2491c482e45ac7dd914d77ddc6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 5124dc2491c482e45ac7dd914d77ddc6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4760,6 +4764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23b978c1cf134a4e9c5dee89d18cc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  accelerate: 0
   speed: -1
 --- !u!1 &1694104739 stripped
 GameObject:
@@ -4845,7 +4850,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Continue Ad
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41906953f81545b1a6b612d229e916c, type: 2}
   m_sharedMaterial: {fileID: 2000062151594140778, guid: c41906953f81545b1a6b612d229e916c, type: 2}
