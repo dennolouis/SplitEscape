@@ -4999,8 +4999,8 @@ MonoBehaviour:
   - {fileID: 2223019714277890785, guid: 8f1d19c67d04c41819ce16f14c824d48, type: 3}
   - {fileID: 390606611904310255, guid: 6c1c2b7a73f77492b8543365b4e0b742, type: 3}
   - {fileID: 1986837695036932680, guid: e84900318b6c24799827244dacf790d2, type: 3}
-  - {fileID: 8836034515492597876, guid: cde78a6c1c2774c87943a09788a20d2b, type: 3}
   - {fileID: 1040904653341349103, guid: f1d06eebfc41b41c2a2f91af9c6ea4f8, type: 3}
+  - {fileID: 8836034515492597876, guid: cde78a6c1c2774c87943a09788a20d2b, type: 3}
   speed: 1.5
   rate: 1.8
   scoreUI: {fileID: 1537979950}
