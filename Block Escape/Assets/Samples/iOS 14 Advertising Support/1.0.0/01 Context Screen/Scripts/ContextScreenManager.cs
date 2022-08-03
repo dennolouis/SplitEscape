@@ -1,4 +1,5 @@
 ﻿using Unity.Advertisement.IosSupport.Components;
+using UnityEngine.Advertisements;
 using UnityEngine;
 using System.Collections;
 using System;
@@ -17,10 +18,12 @@ namespace Unity.Advertisement.IosSupport.Samples
         /// The prefab has to have an ContextScreenView component on its root GameObject.
         /// </summary>
         public ContextScreenView contextScreenPrefab;
+        GdprConsent consent;
 
         void Start()
         {
 #if UNITY_IOS
+            consent = FindObjectOfType<GdprConsent>();
             // check with iOS to see if the user has accepted or declined tracking
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
 
@@ -47,9 +50,16 @@ namespace Unity.Advertisement.IosSupport.Samples
             while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
             {
                 status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-                yield return null;
+
+                if(status == ATTrackingStatusBinding.AuthorizationTrackingStatus.DENIED)
+                {
+                    consent.Deny();
+                }
+
+                yield return null;  
             }
-#endif 
+#endif
+            
             SceneManager.LoadScene(1);
             yield return null;
         }
