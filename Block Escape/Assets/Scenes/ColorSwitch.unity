@@ -1503,6 +1503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 5124dc2491c482e45ac7dd914d77ddc6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 5124dc2491c482e45ac7dd914d77ddc6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1912,13 +1916,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 975101247}
     m_Modifications:
+    - target: {fileID: 100006, guid: c889f670e45b04a468224075a4655856, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: c889f670e45b04a468224075a4655856, type: 3}
       propertyPath: m_Name
       value: DarkBall 1
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: c889f670e45b04a468224075a4655856, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: c889f670e45b04a468224075a4655856, type: 3}
       propertyPath: m_RootOrder
@@ -1982,7 +1990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: c889f670e45b04a468224075a4655856, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.26356414
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: c889f670e45b04a468224075a4655856, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
@@ -1990,7 +1998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: c889f670e45b04a468224075a4655856, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.1273585
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: c889f670e45b04a468224075a4655856, type: 3}
       propertyPath: InitialModule.startRotationX.minMaxState
@@ -4276,7 +4284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6792453, g: 0.18262726, b: 0.43138644, a: 0.59607846}
+  m_Color: {r: 0.076539695, g: 0.3773585, b: 0.08659395, a: 0.59607846}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6072,7 +6080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23b978c1cf134a4e9c5dee89d18cc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.1
+  accelerate: 0
+  speed: -0.6
 --- !u!1 &1705934920
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,13 +6224,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336761903}
     m_Modifications:
+    - target: {fileID: 100006, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: m_Name
       value: DarkBall
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: m_RootOrder
@@ -6282,6 +6295,18 @@ PrefabInstance:
     - target: {fileID: 11400002, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: InitialModule.startRotationX.minMaxState
@@ -6816,6 +6841,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2069250849}
     m_Modifications:
+    - target: {fileID: 360531074849495311, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34d6894b8e10f494481d99167a6616ef, type: 2}
     - target: {fileID: 361293990530481669, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_Name
       value: GameFram
@@ -6827,7 +6856,7 @@ PrefabInstance:
     - target: {fileID: 1418480325113572719, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f214d30499b7ca540a1746a3d8e9e05c, type: 2}
+      objectReference: {fileID: 2100000, guid: 34d6894b8e10f494481d99167a6616ef, type: 2}
     - target: {fileID: 2107466087673397705, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_Name
       value: LeftWall
@@ -6839,7 +6868,7 @@ PrefabInstance:
     - target: {fileID: 2569548493433685678, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1e648ead8a410124ebe0a56436c7431f, type: 2}
+      objectReference: {fileID: 2100000, guid: 34d6894b8e10f494481d99167a6616ef, type: 2}
     - target: {fileID: 3671568274274053889, guid: 731c4a147f51389489ff7c73f330c1ef, type: 3}
       propertyPath: m_RootOrder
       value: 2

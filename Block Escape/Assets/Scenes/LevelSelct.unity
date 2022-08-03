@@ -3928,7 +3928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &964113720
 Transform:
   m_ObjectHideFlags: 0
@@ -4751,9 +4751,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 964113720}
     m_Modifications:
-    - target: {fileID: 8095581874937516264, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+    - target: {fileID: 8095581874917886338, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874917886338, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874917886338, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874937516260, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874937516264, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8095581875147013696, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6283,9 +6299,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 964113720}
     m_Modifications:
-    - target: {fileID: 8095581874937516264, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+    - target: {fileID: 8095581874917886338, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874917886338, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874917886338, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874937516260, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095581874937516264, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8095581875147013696, guid: 7eab4a82e64ddd04c9c722dd51d9d8aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7687,7 +7719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2122380461
 Transform:
   m_ObjectHideFlags: 0
