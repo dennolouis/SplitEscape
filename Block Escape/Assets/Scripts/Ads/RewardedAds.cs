@@ -81,7 +81,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         else
         {
             Time.timeScale = 1;
-            FindObjectOfType<LevelChanger>().FadeToLevel(1);
+            FindObjectOfType<GameFunctions>().ShowGameOverScreen();
         }
 
     }

@@ -59,7 +59,7 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         // Optionally execute code if the Ad Unit fails to load, such as attempting to try again.
         Time.timeScale = 1;
         AudioListener.pause = volume.muteSate;
-        FindObjectOfType<LevelChanger>().FadeToLevel(1);
+        //FindObjectOfType<LevelChanger>().FadeToLevel(1);
     }
 
     public void OnUnityAdsShowFailure(string adUnitId, UnityAdsShowError error, string message)
@@ -68,7 +68,7 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
         Time.timeScale = 1;
         AudioListener.pause = volume.muteSate;
-        FindObjectOfType<LevelChanger>().FadeToLevel(1);
+        //FindObjectOfType<LevelChanger>().FadeToLevel(1);
     }
 
     public void OnUnityAdsShowStart(string adUnitId) { }
