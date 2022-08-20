@@ -125,8 +125,8 @@ public class SelectionHandler : MonoBehaviour
             return;
         }
 
-        medium.interactable = Player.instance.scoresList[Player.instance.selectedLevel] >= 40;
-        hard.interactable = Player.instance.scoresList[Player.instance.selectedLevel] >= 80;
+        //medium.interactable = Player.instance.scoresList[Player.instance.selectedLevel] >= 40;
+        //hard.interactable = Player.instance.scoresList[Player.instance.selectedLevel] >= 80;
 
         modes.SetActive(true);
     }

@@ -1182,10 +1182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'score 40 for medium
-
-
-    score 80 for hard'
+  m_text: Only the score on hard mode will be recorded on the leaderboard
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41906953f81545b1a6b612d229e916c, type: 2}
   m_sharedMaterial: {fileID: 2000062151594140778, guid: c41906953f81545b1a6b612d229e916c, type: 2}
